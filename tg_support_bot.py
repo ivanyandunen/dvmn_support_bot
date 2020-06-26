@@ -30,7 +30,7 @@ def error(bot, update, error):
 
 
 def main():
-    updater = Updater(os.getenv('TOKEN'))
+    updater = Updater(os.getenv('TG_TOKEN'))
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('help', help))
