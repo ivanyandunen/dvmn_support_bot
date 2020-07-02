@@ -42,3 +42,26 @@ Phrases are saved in **quiestions.json**
 ```
 python3 dialogflow.py
 ```
+
+## How to deploy to Heroku
+Create [new app](https://dashboard.heroku.com/new-app)
+
+In Settings -> Config Vars add:
+
+``TG_TOKEN`` telegram bot's token
+
+``VK_TOKEN`` vk bot's token
+
+``PROJECT_ID`` project id in Dialogflow
+
+``GOOGLE_APPLICATION_CREDENTIALS`` follow [the instruction](https://github.com/gerywahyunugraha/heroku-google-application-credentials-buildpack
+)
+
+In Deploy -> Connect your Github repo to the app -> Deploy Branch
+In Resources -> Free Dinos -> Enable bot you need.
+
+## Examples
+
+[TG Bot](https://t.me/dvmn_support_bot)
+
+[VK Bot](https://vk.com/im?media=&sel=-196643932)
