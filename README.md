@@ -3,6 +3,9 @@
 ## Description
 Here are two chatbots for telegram and vk.com which could be used as first-line support in your channel/community.
 
+![](https://raw.githubusercontent.com/ivanyandunen/dvmn_support_bot/master/gifs/demo_tg_bot.gif)
+
+
 ## How to use
 ### Dialogflow
 [Create a project in Dialogflow](https://cloud.google.com/dialogflow/docs/quick/setup)
@@ -53,6 +56,8 @@ In Settings -> Config Vars add:
 ``VK_TOKEN`` vk bot's token
 
 ``PROJECT_ID`` project id in Dialogflow
+
+``CHAT_ID`` is your account id in Telegam. Ask [userinfobot](https://t.me/userinfobot)
 
 ``GOOGLE_APPLICATION_CREDENTIALS`` follow [the instruction](https://github.com/gerywahyunugraha/heroku-google-application-credentials-buildpack
 )
