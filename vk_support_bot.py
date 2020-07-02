@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 import os
 import random
 from dialogflow import detect_intent_texts
+import logging
+from tg_logger import TgHandler
 
 load_dotenv()
 
@@ -19,6 +21,10 @@ def echo(event, vk_api):
 
 
 if __name__ == "__main__":
+    logger = logging.getLogger("Logger")
+    logger.setLevel(logging.INFO)
+    logger.addHandler(TgHandler())
+
     project_id = os.getenv('PROJECT_ID')
     vk_session = vk_api.VkApi(token=os.getenv('VK_TOKEN'))
     vk_api = vk_session.get_api()
@@ -32,4 +38,3 @@ if __name__ == "__main__":
             else:
                 print('От меня для: ', event.user_id)
             print('Текст:', event.text)
-

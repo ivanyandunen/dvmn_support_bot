@@ -3,7 +3,7 @@ import logging
 from dotenv import load_dotenv
 import os
 from dialogflow import detect_intent_texts
-
+from tg_logger import TgHandler
 
 load_dotenv()
 
@@ -47,6 +47,6 @@ if __name__ == '__main__':
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         level=logging.INFO
     )
-    logger = logging.getLogger(__name__)
-
+    logger = logging.getLogger('Logger')
+    logger.addHandler(TgHandler())
     main()
