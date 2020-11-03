@@ -18,7 +18,7 @@ def help(bot, update):
 
 def echo(bot, update):
     text = detect_intent_texts(
-        os.getenv("PROJECT_ID"),
+        os.getenv("DIALOGFLOW_PROJECT_ID"),
         update.message.from_user['id'],
         update.message.text
     )

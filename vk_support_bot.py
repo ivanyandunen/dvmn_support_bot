@@ -25,7 +25,7 @@ if __name__ == "__main__":
     logger.setLevel(logging.INFO)
     logger.addHandler(TgHandler())
 
-    project_id = os.getenv('PROJECT_ID')
+    project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
     vk_session = vk_api.VkApi(token=os.getenv('VK_TOKEN'))
     vk_api = vk_session.get_api()
     longpoll = VkLongPoll(vk_session)

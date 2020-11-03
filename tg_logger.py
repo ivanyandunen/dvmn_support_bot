@@ -8,7 +8,7 @@ class TgHandler(logging.Handler):
     def __init__(self):
         super().__init__()
         self.bot = os.getenv('TG_TOKEN')
-        self.chat_id = os.getenv('CHAT_ID')
+        self.chat_id = os.getenv('TG_CHAT_ID')
 
     def emit(self, record):
         log_entry = self.format(record)
