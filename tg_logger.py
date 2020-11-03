@@ -4,7 +4,6 @@ from telegram import Bot
 
 class TgHandler(logging.Handler):
 
-
     def __init__(self):
         super().__init__()
         self.bot = os.getenv('TG_TOKEN')

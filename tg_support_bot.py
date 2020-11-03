@@ -7,6 +7,7 @@ from tg_logger import TgHandler
 
 load_dotenv()
 
+logger = logging.getLogger('Logger')
 
 def start(bot, update):
     update.message.reply_text('Здравствуйте')
@@ -47,6 +48,5 @@ if __name__ == '__main__':
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         level=logging.INFO
     )
-    logger = logging.getLogger('Logger')
     logger.addHandler(TgHandler())
     main()

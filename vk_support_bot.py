@@ -9,6 +9,8 @@ from tg_logger import TgHandler
 
 load_dotenv()
 
+logger = logging.getLogger("Logger")
+
 
 def echo(event, vk_api):
     response = detect_intent_texts(project_id, event.user_id, event.text)
@@ -21,7 +23,7 @@ def echo(event, vk_api):
 
 
 if __name__ == "__main__":
-    logger = logging.getLogger("Logger")
+
     logger.setLevel(logging.INFO)
     logger.addHandler(TgHandler())
 
