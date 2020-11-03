@@ -55,7 +55,6 @@ def train_agent(project_id):
 
 
 if __name__ == "__main__":
-    load_dotenv()
     project_id = os.getenv('PROJECT_ID')
 
     questions = load_questions('questions.json')
@@ -64,5 +63,5 @@ if __name__ == "__main__":
         questions = data['questions']
         answer = data['answer']
         create_intent(intent_name, questions, [answer], project_id=project_id)
-    
+
     train_agent(project_id)
