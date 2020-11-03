@@ -41,9 +41,13 @@ python3 vk_support_bot.py
 ```
 
 ### To train dialogflow agent with new phrases
-Phrases are saved in **questions.json**
+Phrases are saved by default in **questions.json**. It is also possible to specify your own file with phrases.
 ```
 python3 dialogflow.py
+```
+or
+```
+python3 dialogflow.py -q %path\to\yourfile%
 ```
 
 ## How to deploy to Heroku

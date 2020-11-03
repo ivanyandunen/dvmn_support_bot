@@ -2,8 +2,18 @@ import json
 import dialogflow_v2 as dialogflow
 from dotenv import load_dotenv
 import os
+import argparse
 
 load_dotenv()
+
+def get_parser_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-q', '--questions',
+        default='questions.json',
+        help='Specify a file with train phrases. Default is "questions.json".'
+    )
+    return parser.parse_args()
 
 
 def detect_intent_texts(project_id, session_id, text, language_code='ru-RU'):
@@ -22,8 +32,8 @@ def detect_intent_texts(project_id, session_id, text, language_code='ru-RU'):
 
 
 def load_questions(file):
-    with open(file, "r") as file_content:
-        questions = json.load(file_content)
+    with open(file, "r") as file_object:
+        questions = json.load(file_object)
     return questions
 
 
@@ -56,8 +66,9 @@ def train_agent(project_id):
 
 if __name__ == "__main__":
     project_id = os.getenv('PROJECT_ID')
+    args = get_parser_args()
 
-    questions = load_questions('questions.json')
+    questions = load_questions(args.questions)
 
     for intent_name, data in questions.items():
         questions = data['questions']
