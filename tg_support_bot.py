@@ -13,10 +13,6 @@ def start(bot, update):
     update.message.reply_text('Здравствуйте')
 
 
-def help(bot, update):
-    update.message.reply_text('Help!')
-
-
 def echo(bot, update):
     text = detect_intent_texts(
         os.getenv("DIALOGFLOW_PROJECT_ID"),
@@ -34,7 +30,6 @@ def main():
     updater = Updater(os.getenv('TG_TOKEN'))
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(CommandHandler('help', help))
     dp.add_handler(MessageHandler(Filters.text, echo))
     dp.add_error_handler(error)
 
