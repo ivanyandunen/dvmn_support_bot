@@ -16,7 +16,7 @@ def start(bot, update):
 def echo(bot, update):
     text = detect_intent_texts(
         os.getenv("DIALOGFLOW_PROJECT_ID"),
-        update.message.from_user['id'],
+        f'tg-{update.message.from_user['id']}',
         update.message.text
     )
     update.message.reply_text(text.query_result.fulfillment_text)

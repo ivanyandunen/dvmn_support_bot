@@ -13,7 +13,7 @@ logger = logging.getLogger("Logger")
 
 
 def echo(event, vk_api):
-    response = detect_intent_texts(project_id, event.user_id, event.text)
+    response = detect_intent_texts(project_id, f'vk-{event.user_id}', event.text)
     if not response.query_result.intent.is_fallback:
         vk_api.messages.send(
             user_id=event.user_id,
