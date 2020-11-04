@@ -7,7 +7,6 @@ from dialogflow import detect_intent_texts
 import logging
 from tg_logger import TgHandler
 
-load_dotenv()
 
 logger = logging.getLogger("Logger")
 
@@ -23,6 +22,8 @@ def echo(event, vk_api):
 
 
 if __name__ == "__main__":
+
+    load_dotenv()
 
     logger.setLevel(logging.INFO)
     logger.addHandler(TgHandler())

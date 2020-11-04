@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import os
 import argparse
 
-load_dotenv()
 
 def get_parser_args():
     parser = argparse.ArgumentParser()
@@ -65,6 +64,9 @@ def train_agent(project_id):
 
 
 if __name__ == "__main__":
+
+    load_dotenv()
+
     project_id = os.getenv('PROJECT_ID')
     args = get_parser_args()
 
