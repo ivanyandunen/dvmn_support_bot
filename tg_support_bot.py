@@ -12,7 +12,7 @@ def start(bot, update):
     update.message.reply_text('Здравствуйте')
 
 
-def echo(bot, update):
+def reply_to_message(bot, update):
     text = detect_intent_texts(
         os.getenv("DIALOGFLOW_PROJECT_ID"),
         f'tg-{update.message.from_user['id']}',
@@ -29,7 +29,7 @@ def main():
     updater = Updater(os.getenv('TG_TOKEN'))
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler(Filters.text, echo))
+    dp.add_handler(MessageHandler(Filters.text, reply_to_message))
     dp.add_error_handler(error)
 
     updater.start_polling()

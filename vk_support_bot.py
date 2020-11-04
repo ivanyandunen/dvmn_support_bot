@@ -11,7 +11,7 @@ from tg_logger import TgHandler
 logger = logging.getLogger("Logger")
 
 
-def echo(event, vk_api):
+def reply_to_message(event, vk_api):
     response = detect_intent_texts(project_id, f'vk-{event.user_id}', event.text)
     if not response.query_result.intent.is_fallback:
         vk_api.messages.send(
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         if event.type == VkEventType.MESSAGE_NEW:
             print('Новое сообщение:')
             if event.to_me:
-                echo(event, vk_api)
+                reply_to_message(event, vk_api)
             else:
                 print('От меня для: ', event.user_id)
             print('Текст:', event.text)
