@@ -3,3 +3,4 @@ venv/
 .env
 DvmnSupportBot-071bd590f1be.json
 __pycache__/
+.DS_Store
